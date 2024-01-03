@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: fio
+  namespace: fio-test
 spec:
   serviceName: fio
   replicas: 3 
@@ -32,9 +33,10 @@ spec:
   - metadata:
       name: fio-data
     spec:
-      storageClassName: pure-block
+#      storageClassName: pure-block
+      storageClassName: px-db
       accessModes:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 4Ti
+          storage: 40Gi

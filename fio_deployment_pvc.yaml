@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fio
+  namespace: fio-test
   labels:
     app: fio
 spec:
@@ -39,10 +40,12 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: fio-claim
+  namespace: fio-test
 spec:
-  storageClassName: pure-file
+  storageClassName: px-db
+#  storageClassName: pure-file
   accessModes:
   - ReadWriteMany
   resources:
     requests:
-      storage: 1Ti
+      storage: 100Gi

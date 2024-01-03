@@ -3,13 +3,14 @@ kind: ConfigMap
 apiVersion: v1 
 metadata:
   name: fio-job-config
+  namespace: fio-test
 data:
   fio.job: |-
     [global]
     ioengine=psync
     direct=1
     buffered=0
-    size=10G
+    size=1G
     iodepth=1000
     numjobs=100
     group_reporting
