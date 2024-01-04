@@ -16,9 +16,10 @@ echo "Deploy File TEST"
 kubectl apply -f configmap/file-config.yaml
 kubectl apply -f fio_deployment_pvc.yaml
 
+#mkdir -p ~/logs/portworx/file/
 #for i in `k get pod -n fio-test | grep -v NAME | awk '{print $1}'`
 #do
-# k logs -n fio-test $i -f > ~/logs/$i.txt
+# k logs -n fio-test $i -f > ~/logs/portworx/file/$i.txt
 #done
 
 #for i in `seq 3`
@@ -48,9 +49,10 @@ echo "Deploy Block TEST"
 kubectl apply -f configmap/block-config.yaml
 kubectl apply -f fio_statefulset.yaml
 
+#mkdir -p ~/logs/portworx/block/
 #for i in `k get pod -n fio-test | grep -v NAME | awk '{print $1}'`
 #do
-# k logs -n fio-test $i -f > ~/logs/$i.txt
+# k logs -n fio-test $i -f > ~/logs/portworx/block/$i.txt
 #done
 
 if k get pod -n fio-test | egrep -q fio
