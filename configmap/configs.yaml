@@ -7,7 +7,7 @@ metadata:
 data:
   fio.job: |-
     [global]
-    ioengine=psync
+    ioengine=libaio
     direct=1
     buffered=0
     size=100M
@@ -17,9 +17,9 @@ data:
     refill_buffers
     rwmixread=80
     norandommap
-    randrepeat=0
+    randrepeat=1
     percentage_random=0
-    bs=512K
+    bs=64K
     buffer_compress_percentage=50
     rw=read
     [testjob]

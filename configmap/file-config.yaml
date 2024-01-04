@@ -1,0 +1,23 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: fio-job-config
+  namespace: fio-test
+data:
+  fio.job: |-
+    [global]
+    direct=1
+    numjobs=16
+    size=1G
+    nrfiles=10
+    norandommap
+    time_based=1
+    runtime=180
+    ramp_time=30
+    group_reporting
+    [firstjob]
+    bs=512K
+    rw=randread
+    [secondjob]
+    bs=128K
+    rw=randwrite
