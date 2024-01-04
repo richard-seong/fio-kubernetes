@@ -27,9 +27,9 @@ kubectl apply -f fio_deployment_pvc.yaml
 # sleep 1200
 #done
 
-echo "Waiting 7200 sec"
+echo "Waiting 1 Hour"
 
-sleep 7200
+sleep 3600
 
 echo "Clean all in namespace fio-test"
 
