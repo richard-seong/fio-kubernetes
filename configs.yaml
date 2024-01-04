@@ -10,7 +10,7 @@ data:
     ioengine=psync
     direct=1
     buffered=0
-    size=1G
+    size=100M
     iodepth=1000
     numjobs=100
     group_reporting
