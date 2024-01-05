@@ -9,6 +9,7 @@ data:
     direct=1
     ioengine=libaio
     iodepth=8
+    size=10G
     norandommap
     randrepeat=0
     group_reporting
