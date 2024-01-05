@@ -28,7 +28,7 @@ kubectl apply -f fio_deployment_pvc.yaml
 # sleep 1200
 #done
 
-echo "Waiting 1 Hour"
+echo "Wait 1 hour for block test"
 
 sleep 3600
 
@@ -54,6 +54,12 @@ kubectl apply -f fio_statefulset.yaml
 #do
 # k logs -n fio-test $i -f > ~/logs/portworx/block/$i.txt
 #done
+
+echo "Wait 1 hour for block test"
+
+sleep 3600
+
+echo "Clean all in namespace fio-test"
 
 if k get pod -n fio-test | egrep -q fio
 then

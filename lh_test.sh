@@ -11,6 +11,12 @@ kubectl apply -f lh_fio_statefulset.yaml
 # k logs -n fio-test $i -f > ~/logs/longhorn/$i.txt
 #done
 
+echo "Wait 1 hour for block test"
+
+sleep 3600
+
+echo "Clean all in namespace fio-test"
+
 if k get pod -n fio-test | egrep -q fio
 then
   k delete -f lh_fio_statefulset.yaml
