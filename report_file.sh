@@ -7,7 +7,7 @@ do
     for i in `k get pod -n fio-test | grep Completed | awk '{print $1}'`
     do
       k logs -n fio-test $i > ~/logs/portworx/file/$i.txt
-      echo "================================================"
+      echo "================================================" >> ~/logs/portworx/file/$i.txt
     done
   else
     if (k get pod -n fio-test | egrep -q 1h)
