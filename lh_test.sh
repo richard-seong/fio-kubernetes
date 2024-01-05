@@ -5,11 +5,8 @@ echo "Deploy Block TEST"
 kubectl apply -f configmap/block-config.yaml
 kubectl apply -f lh_fio_statefulset.yaml
 
-#mkdir -p ~/logs/longhorn
-#for i in `k get pod -n fio-test | grep -v NAME | awk '{print $1}'`
-#do
-# k logs -n fio-test $i -f > ~/logs/longhorn/$i.txt
-#done
+mkdir -p ~/logs/longhorn
+sh report_block_lh.sh &
 
 echo "Wait 1 hour for block test"
 
