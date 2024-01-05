@@ -19,7 +19,7 @@ kubectl apply -f fio_deployment_pvc.yaml
 mkdir -p ~/logs/portworx/file/
 sh report_file.sh &
 
-echo "Wait 1 hour for block test"
+echo "Wait 1 hour for file test"
 
 sleep 3600
 
