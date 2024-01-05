@@ -2,11 +2,11 @@
 
 while(k get pod -n fio-test | egrep -q fio)
 do
-  if (k get pod -n fio-test | egrep -q BackOff)
+  if (k get pod -n fio-test | egrep -q Completed)
   then
-    for i in `k get pod -n fio-test | grep -i backoff | awk '{print $1}'`
+    for i in `k get pod -n fio-test | grep Completed | awk '{print $1}'`
     do
-      k logs -n fio-test $i >> ~/logs/portworx/block/$i.txt
+      k logs -n fio-test $i > ~/logs/portworx/block/$i.txt
       echo "================================================" >> ~/logs/portworx/block/$i.txt
     done
   else
